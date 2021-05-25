@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { GET_ALL_EVENTS } from 'utils/queries';
+import { GET_LATEST_EVENTS_BY_ID } from 'utils/queries';
 import CurrentMiningEvent from 'components/mining-events/CurrentMiningEvent';
 import AllMiningEvents from 'components/mining-events/AllMiningEvents';
 import GraphFetch from 'components/shared/GraphFetch';
@@ -14,7 +15,7 @@ const Mining = () => {
   return (
     <>
       <GraphFetch
-        query={GET_ALL_EVENTS}
+        query={GET_LATEST_EVENTS_BY_ID(10)}
         setRecords={setEvents}
       />
 
